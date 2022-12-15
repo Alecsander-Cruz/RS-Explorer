@@ -75,10 +75,12 @@ a {
 }
 
 #wave {
+  position: relative;
+  left: 0;
+  bottom: -4px;
   margin: 40px auto 0;
 
-  width: 100vw;
-  height: 104px;
+  width: 100%;
 }
 
 #text {
