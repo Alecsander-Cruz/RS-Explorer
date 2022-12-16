@@ -1,0 +1,150 @@
+header {
+  width: 319px;
+  margin-top: 80px;
+  margin-bottom: 42px;
+}
+
+header h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: white;
+}
+
+header p {
+  margin-top: 24px;
+
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #42d3ff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e5e5e5;
+
+  width: 736px;
+  margin: 0 auto;
+}
+
+body::before {
+  content: ' ';
+  width: 100%;
+  height: 368px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: #121214;
+}
+
+form {
+  padding: 64px;
+
+  min-height: 100px;
+  background-color: #fafafc;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px 8px 0px 0px;
+}
+
+form fieldset {
+  border: none;
+  border-bottom: 1px solid #e6e6f0;
+}
+
+form fieldset legend {
+  font-family: 'Archivo';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #32264d;
+
+  padding-bottom: 16px;
+}
+
+form label {
+  margin-top: 24px;
+
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4e4958;
+}
+
+form label span {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #c1bccc;
+}
+
+form input {
+  margin-top: 8px;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+  height: 56px;
+
+  padding-left: 24px;
+
+  background-color: #fafafc;
+}
+
+form fieldset:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+div#checkbox {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 24px;
+}
+
+#private {
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+
+  margin: 0;
+}
+
+#checkbox input[type='checkbox']#private {
+  accent-color: #000000;
+}
+
+#checkbox label {
+  margin: 0;
+}
+
+#dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+#dates input {
+  width: 128px;
+}
+
+div input#data {
+  width: 312px;
+}

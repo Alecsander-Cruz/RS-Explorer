@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=JetBrains+Mono:wght@500;700&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Crie e compartilhe seu evento.</h1>
+      <p>O primeiro pass, é preencher ese formulário de inscrição.</p>
+    </header>
+    <main>
+      <form action="">
+        <fieldset>
+          <legend>Informações do Evento</legend>
+        </fieldset>
+        <label for="title"
+          >Título do evento <span>(mínimo 8 caracteres)</span></label
+        >
+        <input type="text" name="title" id="title" />
+        <label for="link"
+          >Link do evento <span>(comece com https://)</span></label
+        >
+        <input type="text" name="link" id="link" />
+        <label for="contactNumber"
+          >Whatsapp para contato <span>(somente número)</span></label
+        >
+        <input type="number" name="contactNumber" id="contactNumber" />
+        <label for="info">Informações extras</label>
+        <input type="text" name="info" id="info" />
+        <label for="category">Categoria</label>
+        <input type="" name="category" id="category" />
+
+        <fieldset>
+          <legend>Privacidade</legend>
+        </fieldset>
+        <label for="email"
+          >E-mail do administrador <span>(digite um email válido)</span></label
+        >
+        <input type="email" name="email" id="email" />
+        <label for="password"
+          >Senha de acesso para os participantes
+          <span>(mínimo 8 caracteres)</span></label
+        >
+        <input type="password" name="password" id="password" />
+        <div id="checkbox">
+          <input type="checkbox" name="private" id="private" />
+          <label for="private">Evento privado</label>
+        </div>
+
+        <fieldset>
+          <legend>Dia e Hora</legend>
+        </fieldset>
+        <div id="dates">
+          <label for="data">Data</label>
+          <label for="from">Das</label>
+          <label for="to">Até</label>
+          <input type="date" name="data" id="data" />
+          <input type="datetime" name="from" id="from" placeholder="19:00" />
+          <input type="datetime" name="to" id="to" placeholder="20:00" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
