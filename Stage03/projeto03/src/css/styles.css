@@ -46,23 +46,26 @@ body::before {
 }
 
 form {
-  padding: 64px;
-
-  min-height: 100px;
-  background-color: #fafafc;
-
   display: flex;
   flex-direction: column;
+  padding: 64px;
+  gap: 48px;
 
-  border-radius: 8px 8px 0px 0px;
+  background-color: #fafafc;
+  border-radius: 8px 8px 0 0;
 }
 
-form fieldset {
+fieldset {
   border: none;
-  border-bottom: 1px solid #e6e6f0;
 }
 
-form fieldset legend {
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fieldset-wrapper legend {
   font-family: 'Archivo';
   font-weight: 600;
   font-size: 24px;
@@ -71,12 +74,18 @@ form fieldset legend {
   color: #32264d;
 
   padding-bottom: 16px;
+  border-bottom: 1px solid #e6e6f0;
 }
 
-form label {
-  margin-top: 24px;
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
 
-  font-family: 'Poppins';
+  gap: 8px;
+}
+
+.input-wrapper label,
+.checkbox-wrapper label {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -84,67 +93,126 @@ form label {
   color: #4e4958;
 }
 
-form label span {
-  font-family: 'Poppins';
+.input-wrapper label span {
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
 
   color: #c1bccc;
+
+  margin-left: 12px;
 }
 
-form input {
-  margin-top: 8px;
+.input-wrapper label span:hover,
+.input-wrapper select:hover {
+  color: #74717c;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+  background: #fafafc;
+
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4e4958;
+
   border: 1px solid #e6e6f0;
   border-radius: 8px;
+
   height: 56px;
 
-  padding-left: 24px;
-
-  background-color: #fafafc;
+  padding: 15px 24px;
 }
 
-form fieldset:not(:first-of-type) {
-  margin-top: 48px;
+.input-wrapper textarea {
+  height: 168px;
+  resize: none;
 }
 
-div#checkbox {
+.input-wrapper select {
+  appearance: none;
+
+  color: #c1bccc;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+.col-3 {
   display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: flex-start;
-
-  margin-top: 24px;
-}
-
-#private {
-  width: 24px;
-  height: 24px;
-
-  border: 1px solid #e6e6f0;
-  border-radius: 8px;
-
-  margin: 0;
-}
-
-#checkbox input[type='checkbox']#private {
-  accent-color: #000000;
-}
-
-#checkbox label {
-  margin: 0;
-}
-
-#dates {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
-#dates input {
-  width: 128px;
+.col-3 > .input-wrapper:first-child {
+  width: 100%;
 }
 
-div input#data {
-  width: 312px;
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper input {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkbox-wrapper label::before {
+  content: ' ';
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  background-color: #fafafc;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_907_20)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_907_20'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E ");
+}
+
+.checkbox-wrapper input:focus + label::before {
+  border: 1px solid #000000;
+}
+
+footer {
+  background-color: #f0f0f4;
+  height: 136px;
+
+  margin-bottom: 87px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid #d6d6d6;
+  border-radius: 0 0 8px 8px;
+}
+
+footer button {
+  background-color: #04d361;
+  border: none;
+  border-radius: 8px;
+  color: white;
+
+  font-family: 'Archivo';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+
+  width: 608px;
+  height: 56px;
 }
